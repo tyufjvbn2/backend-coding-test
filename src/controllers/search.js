@@ -89,7 +89,8 @@ module.exports = async (req, res) => {
         //정상적인 응답
         res.status(200).json({
           data: resultList,
-          message: "We found store list within this radius from north",
+          message:
+            "We found location list within this radius ordered from north",
         });
       } else {
         //세상에 존재하지 않는 postcode일때
