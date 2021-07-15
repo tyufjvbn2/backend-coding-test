@@ -6,7 +6,7 @@
 **서버 실행시 url**
 **ex)http://localhost:3030**
 
-1.  전체 리스트를 가져오고 싶을 때
+1.  **전체 리스트를 가져오고 싶을 때**
 
     > request
 
@@ -19,7 +19,7 @@
         data    : [{"name":"지역명1", "postcode": "우편번호1"}, {"name":"지역명2", "postcode": "우편번호2"}, {"name":"지역명3", "postcode": "우편번호3"}, ....]
         message : "Datalist received successfully"
 
-2.  지역명으로 데이터를 찾을 때
+2.  **지역명으로 데이터를 찾을 때**
 
     > request
 
@@ -33,7 +33,7 @@
         data    : {"name":"지역명", "postcode": "우편번호"}
         message : "We found that data!"
 
-3.  우편번호로 지역의 위치를 찾을 때
+3.  **우편번호로 지역의 위치를 찾을 때**
 
     > request
 
@@ -47,7 +47,7 @@
         data    : {"longitude":"경도값", "latitude": "위도값"}
         message : "Postcode location found"
 
-4.  우편번호와 거리 범위로 주변 지역의 위치를 찾을 때
+4.  **우편번호와 거리 범위로 주변 지역의 위치를 찾을 때**
 
     > request
 
