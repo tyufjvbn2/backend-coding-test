@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 
 const list = require("./list");
-const location = require("./location");
 const store = require("./store");
+const location = require("./location");
+const search = require("./search");
 
 //라우팅
 router.get("/list", list);
-router.post("/search", store);
-router.get("/location", location);
+router.post("/store", store);
+router.post("/location", location);
+router.post("/search", search);
 
 module.exports = router;

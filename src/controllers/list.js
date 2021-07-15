@@ -7,6 +7,6 @@ module.exports = async (req, res) => {
       .json({ data: dataSet, message: "Datalist received successfully" });
   } catch (err) {
     console.error(err);
-    res.status(401).json({ message: err });
+    res.status(400).json({ message: err });
   }
 };

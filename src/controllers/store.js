@@ -3,11 +3,11 @@ const dataSet = require("../../stores.json");
 module.exports = async (req, res) => {
   try {
     console.log("req", req.body);
-    const result = dataSet.filter((data) => {
+    const targetData = dataSet.filter((data) => {
       return data.name === req.body.name;
     });
 
-    if (result.length !== 0) {
+    if (targetData.length !== 0) {
       res.status(200).json({ data: result[0], message: "We found that data!" });
     } else {
       res
@@ -16,6 +16,6 @@ module.exports = async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.status(401).json({ message: err });
+    res.status(400).json({ message: err });
   }
 };
