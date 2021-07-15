@@ -4,8 +4,6 @@ const geolib = require("geolib");
 
 module.exports = async (req, res) => {
   try {
-    //요청 확인
-    console.log("req", req.body);
     //입력값 데이터셋에 존재하는지 확인
     const targetData = dataSet.filter((data) => {
       return data.postcode === req.body.postcode;
@@ -31,7 +29,6 @@ module.exports = async (req, res) => {
           //없는 postcode일때 undefined 처리
           return;
         });
-      //   console.log("target location", targetLocation);
 
       //세상에 존재하는 postcode 일때
       if (targetLocation !== undefined) {
@@ -84,15 +81,12 @@ module.exports = async (req, res) => {
           return 0;
         });
 
-        //   console.log("정렬되었나", orderedList);
-
         //데이터셋에 맞게 배열 수정
         let resultList = orderedList.map(({ value: { name, postcode } }) => {
           return { name, postcode };
         });
 
-        //   console.log("북쪽부터", resultList);
-
+        //정상적인 응답
         res.status(200).json({
           data: resultList,
           message: "We found store list within this radius from north",
@@ -108,6 +102,7 @@ module.exports = async (req, res) => {
         .json({ message: "There is no postcode you written in stores" });
     }
   } catch (err) {
+    //에러 상황일때
     console.error(err);
     res.status(401).json({ message: err });
   }
